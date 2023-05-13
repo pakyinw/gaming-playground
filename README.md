@@ -2,4 +2,4 @@
 
 ## Reference
 
-1. [Create your project in vite](https://github.com/vitejs/vite/issues/8448)
+1. [Create vite in your current directory](https://github.com/vitejs/vite/issues/8448)
