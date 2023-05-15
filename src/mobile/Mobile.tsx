@@ -1,16 +1,16 @@
-import { DEVICE } from '../hooks/useDevice'
+import useOrientation, { ORIENTATION } from '../hooks/useOrientation'
+import Portrait from './Portrait'
+import Landscape from './Landscape'
 
-interface Props{
-  orientation: DEVICE
-}
-function Mobile({orientation}: Props){
+
+function Mobile(){
+  const {orientation} = useOrientation()
   return (
     <div>
-      {{
-        [DEVICE.DESKTOP] : 'DESKTOP',
-        [DEVICE.PORTRAIT] : 'PORTRAIT',
-        [DEVICE.LANDSCAPE] : 'LANDSCAPE'
-      }[orientation]}
+      {
+        orientation === ORIENTATION.PORTRAIT ?
+          <Portrait/> :<Landscape/>
+      }
     </div>
   )
 }
