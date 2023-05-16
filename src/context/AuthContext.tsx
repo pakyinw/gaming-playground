@@ -1,21 +1,21 @@
 import { createContext, PropsWithChildren, useState } from "react"
 
 export interface AuthContextProps {
-  isSignedIn : boolean
-  setIsSignedIn: React.Dispatch<React.SetStateAction<boolean>>
+  isAuth : boolean
+  setIsAuth: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const AuthContext: React.Context<AuthContextProps> = createContext<AuthContextProps>({
-  isSignedIn: false,
-  setIsSignedIn: () => undefined
+  isAuth: false,
+  setIsAuth: () => undefined
 })
 
 const AuthContextProvider = ({children}:PropsWithChildren<Record<string,unknown>>) => {
-  const [isSignedIn, setIsSignedIn] = useState(false)
+  const [isAuth, setIsAuth] = useState(false)
   return (
     <AuthContext.Provider value={{
-      isSignedIn,
-      setIsSignedIn
+      isAuth,
+      setIsAuth
     }}>
       {children}
     </AuthContext.Provider>

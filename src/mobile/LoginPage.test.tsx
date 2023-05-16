@@ -1,7 +1,7 @@
 import {describe, test, vi} from 'vitest'
 
-describe('',()=>{
-  test('',()=>{
+describe('LoginPage',()=>{
+  test('Click',()=>{
         
   })
 })
