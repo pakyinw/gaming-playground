@@ -1,37 +1,15 @@
-import {describe, expect, test, vi} from 'vitest';
+import {describe, expect, test, vi, afterEach} from 'vitest';
 import {render, screen} from '@testing-library/react';
 import Mobile from './Mobile';
-import { ORIENTATION } from '../hooks/useOrientation'
 
-vi.mock('../hooks/useOrientation', async () => {
-  const originalModule = await vi.importActual<typeof import('../hooks/useOrientation')>('../hooks/useOrientation');
+vi.mock('./MobileRoutes', () => ({
+  default: () => (<div>MobileRoutes</div>),
+}));
 
-  return{
-    ...originalModule,
-    default : vi.fn()
-      .mockImplementationOnce(() => {
-        return { orientation: ORIENTATION.PORTRAIT}
-      })
-      .mockImplementationOnce(() => {
-        return { orientation: ORIENTATION.LANDSCAPE}
-      })
-      .mockImplementationOnce(() => {
-        return { orientation: ORIENTATION.LANDSCAPE}
-      })
-  }
-});
 
 describe('Mobile', () => {
-  test('test: Portrait', () => {
+  test('test: MobileRoutes', () => {
     render(<Mobile/>);
-    expect(screen.getByText('Portrait')).toBeDefined()
-  })
-  test('test: non PORTRAIT', () => {
-    render(<Mobile/>);
-    expect(screen.queryByText('Landscape')).toBeDefined()
-  })
-  test('test: non PORTRAIT', () => {
-    render(<Mobile/>);
-    expect(screen.queryByText('Portrait')).toBeNull()
+    expect(screen.getByText('MobileRoutes')).toBeDefined()
   })
 })
