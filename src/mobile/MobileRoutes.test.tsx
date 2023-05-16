@@ -1,5 +1,5 @@
-import {describe, test, vi, afterEach} from 'vitest';
-import {render} from '@testing-library/react';
+import {describe, test, vi, expect} from 'vitest';
+import {render, screen} from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import MobileRoutes from './MobileRoutes'
 
@@ -14,5 +14,6 @@ describe('MobileRouter', () => {
       <MemoryRouter initialEntries={[badRoute]}>
         <MobileRoutes/>
       </MemoryRouter>)
+    expect(screen.getByText('LoginPage')).toBeDefined()
   })
 })
