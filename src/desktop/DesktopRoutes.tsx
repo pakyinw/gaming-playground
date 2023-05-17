@@ -12,7 +12,7 @@ export const ROUTE_PATHS = {
   PROFILE: '/Profile'
 }
 
-function MobileRoutes(){
+function DesktopRoutes(){
   const { isAuth } = useContext(AuthContext)
   return (
     <Routes>
@@ -34,4 +34,4 @@ function MobileRoutes(){
   )
 }
   
-export default MobileRoutes
+export default DesktopRoutes

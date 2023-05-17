@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 import useLogin from "../hooks/useLogin"
 import { useNavigate } from 'react-router-dom'
-import { ROUTE_PATHS } from './MobileRoutes'
+import { ROUTE_PATHS } from './DesktopRoutes'
 import { AuthContext } from '../context/AuthContext'
 
 function LoginPage(){
