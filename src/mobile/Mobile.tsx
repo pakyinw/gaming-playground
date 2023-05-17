@@ -1,13 +1,20 @@
 import { BrowserRouter } from 'react-router-dom'
 import MobileRoutes from './MobileRoutes'
+import Nav from './Nav'
+import { MantineProvider, AppShell } from '@mantine/core'
 
 function Mobile(){
   return (
-    <div>
+    <MantineProvider withNormalizeCSS withGlobalStyles>
       <BrowserRouter>
-        <MobileRoutes/>
-      </BrowserRouter>
-    </div>
+        <AppShell
+          
+          footer={<Nav/>}
+        >
+          <MobileRoutes/>
+        </AppShell>
+      </BrowserRouter>      
+    </MantineProvider>
   )
 }
   

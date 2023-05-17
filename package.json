@@ -12,6 +12,10 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@mantine/core": "^6.0.11",
+    "@mantine/hooks": "^6.0.11",
+    "@tabler/icons-react": "^2.19.0",
     "@types/ua-parser-js": "^0.7.36",
     "axios": "^1.4.0",
     "react": "^18.2.0",
