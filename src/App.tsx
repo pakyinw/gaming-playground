@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'development') {
 function App() {
   return (
     <AuthContextProvider>
-      {isDesktop?
+      {isDesktop()?
         <Desktop/>: <Mobile/>
       }
     </AuthContextProvider>
