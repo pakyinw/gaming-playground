@@ -1,5 +1,5 @@
 function LobbyPage () {
-  return(<div>LobbyPage</div>)
+  return(<div>Mobile LobbyPage</div>)
 }
   
 export default LobbyPage
