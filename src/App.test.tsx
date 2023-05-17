@@ -1,7 +1,6 @@
 import { describe,test,vi, expect } from "vitest";
 import { render, screen } from '@testing-library/react'
 import App from "./App.tsx";
-import { isDesktop } from "./utils/device.ts";
 
 vi.mock('./utils/device.ts', () => {
   return {
