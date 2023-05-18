@@ -3,7 +3,7 @@ import { IconSettings } from '@tabler/icons-react';
 
 function Nav() {
   return (
-    <Footer height={60} p="md">
+    <Footer height={60} p="md" bg={"rgba(24, 59, 128, 1)"}>
       <Group position="apart">
         <ActionIcon variant="transparent"><IconSettings size="1rem" /></ActionIcon>
         <ActionIcon variant="subtle"><IconSettings size="1rem" /></ActionIcon>

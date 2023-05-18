@@ -3,14 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import LoginPage from './LoginPage'
 import LobbyPage from './LobbyPage'
 import { AuthContext } from '../context/AuthContext'
-
-export const ROUTE_PATHS = {
-  LOGIN: '/Login',
-  LOBBY: '/Lobby',
-  RECORD: '/Record',
-  GAME: '/Game',
-  PROFILE: '/Profile'
-}
+import { ROUTES } from '../constants/routes'
 
 function DesktopRoutes(){
   const { isAuth } = useContext(AuthContext)
@@ -18,17 +11,17 @@ function DesktopRoutes(){
     <Routes>
       {isAuth ?
         <>
-          <Route path={ROUTE_PATHS.LOBBY} element={<LobbyPage/>} />
-          <Route path={ROUTE_PATHS.RECORD} element={<LobbyPage/>} />
-          <Route path={ROUTE_PATHS.GAME} element={<LobbyPage/>} />
-          <Route path={ROUTE_PATHS.PROFILE} element={<LobbyPage/>} />
+          <Route path={ROUTES.LOBBY} element={<LobbyPage/>} />
+          <Route path={ROUTES.RECORD} element={<LobbyPage/>} />
+          <Route path={ROUTES.GAME} element={<LobbyPage/>} />
+          <Route path={ROUTES.PROFILE} element={<LobbyPage/>} />
         </>
         :
-        <Route path={ROUTE_PATHS.LOGIN} element={<LoginPage/>} />
+        <Route path={ROUTES.LOGIN} element={<LoginPage/>} />
       }
       { /* For all the unknown path */}
       <Route path="*" element={<Navigate to={
-        isAuth? ROUTE_PATHS.LOBBY : ROUTE_PATHS.LOGIN 
+        isAuth? ROUTES.LOBBY : ROUTES.LOGIN 
       } replace />} />
     </Routes>
   )

@@ -4,7 +4,7 @@ import DesktopRoutes from './DesktopRoutes'
 function Desktop(){
   return (
     <div>
-      <BrowserRouter>
+g      <BrowserRouter>
         <DesktopRoutes/>
       </BrowserRouter>
     </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 import useLogin from "../hooks/useLogin"
 import { useNavigate } from 'react-router-dom'
-import { ROUTE_PATHS } from './DesktopRoutes'
+import { ROUTES } from '../constants/routes'
 import { AuthContext } from '../context/AuthContext'
 
 function LoginPage(){
@@ -12,7 +12,7 @@ function LoginPage(){
   const { isAuth } = useContext(AuthContext)
 
   useEffect(()=>{
-    isAuth && nav(ROUTE_PATHS.LOBBY)
+    isAuth && nav(ROUTES.LOBBY)
   },[isAuth,nav])
 
   return(

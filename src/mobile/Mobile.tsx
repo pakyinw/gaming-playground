@@ -7,10 +7,7 @@ function Mobile(){
   return (
     <MantineProvider withNormalizeCSS withGlobalStyles>
       <BrowserRouter>
-        <AppShell
-          
-          footer={<Nav/>}
-        >
+        <AppShell footer={<Nav/>}>
           <MobileRoutes/>
         </AppShell>
       </BrowserRouter>      
