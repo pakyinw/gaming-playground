@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import MobileRoutes from './MobileRoutes'
-import Nav from './Nav'
+import Nav from './nav/Nav'
 import { MantineProvider, AppShell } from '@mantine/core'
 import { AuthContext } from '../context/AuthContext'
 import LoginPage from './overlay/LoginOverlay'

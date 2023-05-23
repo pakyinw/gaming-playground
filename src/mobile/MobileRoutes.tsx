@@ -1,7 +1,5 @@
-import { useContext } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import LobbyPage from './pages/LobbyPage'
-import { AuthContext } from '../context/AuthContext'
 import { ROUTES } from '../constants/routes'
 
 function MobileRoutes(){
