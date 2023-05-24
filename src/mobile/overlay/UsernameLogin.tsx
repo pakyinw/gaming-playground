@@ -1,6 +1,6 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState } from 'react'
 import { useForm } from '@mantine/form';
-import { TextInput, Button, Tabs } from '@mantine/core';
+import { TextInput } from '@mantine/core';
 import useLogin from "../../hooks/useLogin"
 
 function UsernameLogin () {

@@ -1,4 +1,4 @@
-import {describe, expect, test, vi, afterEach} from 'vitest';
+import {describe, expect, test, vi} from 'vitest';
 import {render, screen} from '@testing-library/react';
 import Mobile from './Mobile';
 

@@ -2,11 +2,11 @@
 import { rest } from 'msw'
 
 export const handlers = [
-  rest.post('/api/foo', (req, res, ctx) => {
+  rest.post('/api/foo', (req) => {
     return req.passthrough();
   }),
 
-  rest.post('/mocks/login', (req, res, ctx) => {
+  rest.post('/mocks/login', (_, res, ctx) => {
     // Persist user's authentication in the session
     sessionStorage.setItem('is-authenticated', 'true')
 
@@ -17,7 +17,7 @@ export const handlers = [
     )
   }),
 
-  rest.get('/mocks/user', (req, res, ctx) => {
+  rest.get('/mocks/user', (_, res, ctx) => {
     // Check if the user is authenticated in this session
     const isAuthenticated = sessionStorage.getItem('is-authenticated')
 

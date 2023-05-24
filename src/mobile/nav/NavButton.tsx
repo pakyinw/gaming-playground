@@ -1,4 +1,4 @@
-import { Text, UnstyledButton, Stack, Center, Radio } from '@mantine/core'
+import { Text, UnstyledButton, Stack } from '@mantine/core'
 import { IconSettings } from '@tabler/icons-react';
 
 interface Props{

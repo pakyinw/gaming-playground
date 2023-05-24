@@ -12,6 +12,10 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@capacitor/android": "^5.0.4",
+    "@capacitor/cli": "^5.0.4",
+    "@capacitor/core": "^5.0.4",
+    "@capacitor/ios": "^5.0.4",
     "@emotion/react": "^11.11.0",
     "@mantine/core": "^6.0.11",
     "@mantine/form": "^6.0.11",

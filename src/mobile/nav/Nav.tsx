@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Footer, Group, ActionIcon } from '@mantine/core'
+import { Footer, Group } from '@mantine/core'
 import NavButton from './NavButton';
 
 const menu = [

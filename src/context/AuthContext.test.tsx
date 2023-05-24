@@ -5,19 +5,19 @@ import userEvent from "@testing-library/user-event";
 import AuthContextProvider, { AuthContext } from "./AuthContext";
 
 const Gate = ()=>{
-  const { isSignedIn } = useContext(AuthContext)
+  const { isAuth } = useContext(AuthContext)
   return (
     <div>
-      { isSignedIn? 'Opened' : 'Closed'}
+      { isAuth? 'Opened' : 'Closed'}
     </div>
   )
 }
 
 const Button = ()=>{
-  const { setIsSignedIn } = useContext(AuthContext)
+  const { setIsAuth } = useContext(AuthContext)
   return (
     <div>
-      <button onClick={()=>setIsSignedIn(true)}>Click Me</button>
+      <button onClick={()=>setIsAuth(true)}>Click Me</button>
     </div>
   )
 }
