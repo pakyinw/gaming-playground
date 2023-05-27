@@ -3,5 +3,14 @@ export const ROUTES = {
   LOBBY: '/Lobby',
   RECORD: '/Record',
   GAME: '/Game',
-  PROFILE: '/Profile'
+  PROFILE: '/Profile',
+  MOBILE: {
+    ROOT: '/',
+    LOGIN: '/Login',
+    RECORD: '/Record',
+    GAME: '/Games',
+    PROFILE: '/Profile',
+    SPORT: '/Sport',
+    STREAM: '/Stream'
+  }
 }

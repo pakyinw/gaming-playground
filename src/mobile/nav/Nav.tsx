@@ -1,45 +1,61 @@
 import { useState } from 'react'
 import { Footer, Group } from '@mantine/core'
 import NavButton from './NavButton';
+import { ROUTES } from '../../constants/routes';
+import { useLocation,useNavigate } from 'react-router-dom';
 
-const menu = [
+const menu : Array<{
+  key: string,
+  text: string,
+  dest: string
+}> = [
   {
     key: 'stream',
     text: 'Stream',
-    color: '',
+    dest: ROUTES.MOBILE.STREAM
   }, 
   {
     key: 'games',
     text: 'Games',
-    color: '',
+    dest: ROUTES.MOBILE.GAME
   },
   {
     key: 'sports',
     text: 'Sports',
-    color: '',
+    dest: ROUTES.MOBILE.SPORT
   },
   {
     key: 'bet',
     text: 'My Bet',
-    color: '',
+    dest: ROUTES.MOBILE.RECORD
   }, 
   {    
     key: 'profile',
     text: 'Profile',
-    color: '',
+    dest: ROUTES.MOBILE.PROFILE
   }
 ]
 
+
 function Nav() {
-  const [ selected, setSelected ] = useState('')
+  const location = useLocation()
+  const currentPage = menu.find(item=>location.pathname.includes(item.dest))
+  const defaultSelected = currentPage ? currentPage.key : ''
+  const [ selected, setSelected ] = useState(defaultSelected)
+
+  const navigate = useNavigate()
   return (
     <Footer height={60} bg={"rgba(24, 59, 128, 1)"}>
       <Group position="apart" m={10}>
         {menu.map(value=>{
           return (<NavButton 
+            key={value.key}
             text={value.text}
             selected={value.key === selected}
-            onClick={()=>{ setSelected(value.key) }}
+            onClick={()=>{ 
+              setSelected(value.key)
+              navigate(value.dest) 
+            }}
           />)
         })}
         
