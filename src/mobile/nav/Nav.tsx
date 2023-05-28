@@ -4,11 +4,13 @@ import NavButton from './NavButton';
 import { ROUTES } from '../../constants/routes';
 import { useLocation,useNavigate } from 'react-router-dom';
 
-const menu : Array<{
+interface Page {
   key: string,
   text: string,
   dest: string
-}> = [
+}
+
+const MENU : Array<Page> = [
   {
     key: 'stream',
     text: 'Stream',
@@ -39,7 +41,7 @@ const menu : Array<{
 
 function Nav() {
   const location = useLocation()
-  const currentPage = menu.find(item=>location.pathname.includes(item.dest))
+  const currentPage = MENU.find(item=>location.pathname.includes(item.dest))
   const defaultSelected = currentPage ? currentPage.key : ''
   const [ selected, setSelected ] = useState(defaultSelected)
 
@@ -47,7 +49,7 @@ function Nav() {
   return (
     <Footer height={60} bg={"rgba(24, 59, 128, 1)"}>
       <Group position="apart" m={10}>
-        {menu.map(value=>{
+        {MENU.map(value=>{
           return (<NavButton 
             key={value.key}
             text={value.text}
